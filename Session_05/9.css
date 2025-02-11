@@ -1,0 +1,25 @@
+h1 {
+    margin: 0;
+    padding-top: 20px;
+    border-bottom: 5px dashed gray;
+    font-family: Verdana, sans-serif;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+table{
+    width: 100%;
+    padding-top: 20px;
+    font-family: Verdana, sans-serif;
+}
+td{
+    padding: 10px;
+}
+.border{
+    border-right: 2px solid gray;
+}
+
+p{
+    color: gray;
+}

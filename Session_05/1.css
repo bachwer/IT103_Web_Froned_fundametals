@@ -1,0 +1,15 @@
+   body > h1{
+    background-color: blanchedalmond;
+    color:cornflowerblue;
+    text-align: center;
+}
+ul li h3{
+    color:red;
+}
+ul li h2{
+    color:green;
+}
+
+ul li h1{
+    color:blue;
+}

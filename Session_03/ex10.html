@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        width: 600px;
+    }
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .form-group label {
+        width: 310px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        flex: 1;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://api.gateway.com" method="post">
+    <div class="form-group">
+        <label for = "name">Họ và Tên</label>
+        <input type="text" name="name" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for = "date">Ngày sinh</label>
+        <input type="date" name="date" id="date"/>
+    </div>
+
+    <div class="form-group">
+        <lable for="gender">Giới tính</lable>
+        <label for="female"></label><input type="radio" id="female" name="gender">Nam
+        <label for="male"></label><input type="radio" id="male" name="gender">Nữ
+    </div>
+
+    <div class="form-group">
+        <label for = "phone">Số điện thoại</label>
+        <input type="tel" name="phone" id="phone">
+    </div>
+
+    <div class="form-group">
+        <label for = "email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+
+    <div class="form-group">
+        <label for = "NameCompany">Tên công ty</label>
+        <input type="text" name="NameCompany" id="NameCompany">
+    </div>
+
+    <div class="form-group">
+        <label for="role">Vai trò trong công ty</label>
+        <select name="role" id="role">
+            <option value="CEO">CEO</option>
+            <option value="CTO">CTO</option>
+            <option value="Founder">Founder</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CompanySize">Quy Mô Công ty</label>
+            <select name="CompanySize" id="CompanySize">
+                <option value="1">Doanh nghiệp nhỏ</option>
+                <option value="2">Doanh nghiệp Vừa</option>
+                <option value="3">Doanh nghiệp TB</option>
+                <option value="4">Doanh nghiệp Lớn</option>
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label for="CompanyIndustry">Ngành nghề công ty</label>
+        <input type="text" name="CompanyIndustry" id="CompanyIndustry">
+    </div>
+
+    <div class="form-group">
+        <label for="reason">Lý do tham gia câu lạc bô:</label>
+        <textarea name="reason" id="reason"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="experience">Kinh nghiệm</label>
+        <textarea name="experience" id="experience"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="target">Lý do tham gia câu lạc bô:</label>
+        <textarea name="target" id="target"></textarea>
+    </div>
+    <div>
+        <lable>Chương trình sự kiện mong muốn tham gia</lable>
+        <label for="networking"></label><input type="checkbox" name="networking" id="networking">networking
+        <label for="workshop"></label><input type="checkbox" name="networking" id="workshop">workshop
+        <label for="seminar"></label><input type="checkbox" name="networking" id="seminar">seminar
+
+    </div>
+
+    <div class="form-group">
+        <label for="News">Đăng kí nhận bản tin</label>
+        <input type="checkbox" name="News" id="News">Có
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Đăng kí hội viên</button>
+    </div>
+</form>
+</body>
+</html>

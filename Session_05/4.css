@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+table{
+    width: 1200px;
+    height: 200px;
+    margin: auto;
+}
+th,td{
+    text-align: center;
+}
+th{
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+.gray{
+    background-color: rgb(205, 205, 205);
+}
+body{
+    background-color: rgb(255, 255, 255);
+}

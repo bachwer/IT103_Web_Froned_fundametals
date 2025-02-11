@@ -1,0 +1,20 @@
+h1{
+    font-family: Verdana, sans-serif;
+    color: #1F4E78;
+}
+p{
+    font-family: Verdana, sans-serif;
+}
+.example-box {
+    background-color: #fff8dc;
+    border-left: 5px solid #efd750;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+pre{
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Verdana, sans-serif;
+}

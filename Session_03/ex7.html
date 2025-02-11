@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<style>
+  div{
+    margin: 10px;
+  }
+  form{
+    width: 400px;
+  }
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://api.gateway.com" method="post">
+  <div class="text">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name"><br>
+  </div>
+  <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email"><br>
+  </div>
+  <div>
+      <label for="date">Ngay sinh</label>
+      <input type="date" id="date" name="date"><br>
+  </div>
+    <div class="form-group">
+        <lable for="gender">Giới tính</lable>
+        <label for="female"></label><input type="radio" id="female" name="gender">Nam
+        <label for="male"></label><input type="radio" id="male" name="gender">Nữ
+    </div>
+  <div>
+      <label for="phonenumber">So dien thoai</label>
+      <input type="number" id="phonenumber" name="phonenumber"><br>
+  </div>
+  <div>
+      <label for="chuyenngnah">chuyen nganh</label>
+      <input class="textt" type="text" id="chuyenngnah" name="chuyenngnah"><br>
+  </div>
+  <div>
+      <label for="year">Nam nhap hoc</label>
+      <input type="number" id="year" name="year" min="2020" max="2025"><br>
+  </div>
+  <div>
+      <label for="GPA">diem gpa</label>
+      <input type="number" id="GPA" name="year" min="0" max="4.0"><br>
+  </div>
+  <div>
+      <label for="dia chi">Dia chi</label>
+      <textarea id="dia chi" name="dia chi"></textarea><br>
+  </div>
+  <div>
+      <label for="class">Lop hoc</label>
+      <select id="class" name="class">
+        <option>Lop 1</option>
+        <option>Lop 2</option>
+        <option>Lop 3</option>
+        <option>Lop 4</option>
+        <option>Lop 5</option>
+      </select><br>
+  </div>
+  <div>
+      <label for="datetime">Chọn ngày & giờ:</label>
+      <input type="datetime-local" id="datetime"><br>
+  </div>
+
+  <button type="submit">GUI</button>
+
+</form>
+</body>
+</html>

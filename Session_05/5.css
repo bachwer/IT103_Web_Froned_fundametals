@@ -1,0 +1,23 @@
+img{
+    width: 300px;
+    height: 210px;
+    margin-right: 10px;
+}
+.box{
+    display:flex;
+    margin:center;
+    margin-left: 10px;
+}
+.sad{
+    color: rgb(132, 137, 132);   
+    font-family: "Fira Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h3, p {
+    display: inline-block;
+    margin: 0 2px;
+  }
+  h3{
+    color: rgb(86, 86, 86);   
+  }

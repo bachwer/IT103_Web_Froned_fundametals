@@ -1,0 +1,38 @@
+.background{
+    background-color: rgb(178, 176, 176);
+    width: 800px;
+    padding: 15px;
+}
+
+h1{
+    font-family: Verdana, sans-serif;
+}
+
+td{
+    border: 5px;
+}
+
+
+  h3, p {
+    display: inline-block;
+    margin: 0 2px; 
+  }
+.checkbox{
+    margin-top: 10px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    padding: 5px;
+}
+.footer{
+    width: 800px;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+button{
+    width: 700px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 50px;
+    background-color: rgb(61, 61, 216);
+    color: aliceblue;
+}

@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    font-family: Verdana, sans-serif;
+}
+table{
+    font-family: Verdana, sans-serif;
+    width: 1200px;
+    height: 200px;
+    margin: auto;
+}
+th,td{
+    text-align: center;
+}
+th{
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+.gray{
+    background-color: rgb(205, 205, 205);
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+.view{
+    background-color: green;
+    color: white;
+    border: 0cap;
+    padding: 5px;
+}
+.update{
+    background-color: yellow;
+    color: black;
+    border: 0cap;
+    padding: 5px;
+}
+.delete{
+    background-color: red;
+    color: white;
+    border: 0cap;
+    padding: 5px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

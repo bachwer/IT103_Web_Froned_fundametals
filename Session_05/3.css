@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+body > h1{
+    color: aliceblue;
+}
+img{
+    width: 200px;
+    height: 220px;
+    margin: 10px;   
+}
+p{
+    color: green;
+    text-decoration: underline dotted;
+    font-size: 30px;
+    font-family: "Fira Sans", serif;
+    font-weight: 800;
+    font-style: normal;
+}
