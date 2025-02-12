@@ -1,16 +1,15 @@
-.background{
-    background-color: rgb(178, 176, 176);
-    width: 800px;
+.background {
+    background-color: rgb(243, 236, 236);
+    width: 600px;
     padding: 15px;
+    margin: auto; 
+    font-family: "Fira Sans", serif;
 }
 
 h1{
-    font-family: Verdana, sans-serif;
+    font-family: "Fira Sans", serif;
 }
 
-td{
-    border: 5px;
-}
 
 
   h3, p {
@@ -19,20 +18,56 @@ td{
   }
 .checkbox{
     margin-top: 10px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(212, 210, 210);
     border-top: 1px solid gray;
     padding: 5px;
 }
 .footer{
-    width: 800px;
+    width: 600px;
     border-bottom: 1px solid gray;
     padding: 5px;
 }
 button{
-    width: 700px;
+    width: 500px;
     height: 40px;
     margin-top: 10px;
     margin-left: 50px;
     background-color: rgb(61, 61, 216);
     color: aliceblue;
+    border-radius: 4%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px;
+    width: 600px;
+    background-color: #f8f8f8;
+}
+.usename{
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    width: 600px;
+}
+
+.boxmini{
+    margin-right: 8px;
+    color: #888;
+    text-align: center;
+}
+
+.trtr{
+    border-radius: 4%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 22  px; ;
+}
+
+
+

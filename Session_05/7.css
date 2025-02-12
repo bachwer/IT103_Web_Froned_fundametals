@@ -62,8 +62,10 @@ td{
     margin: 4px 2px;
     cursor: pointer;
     border: 0cm;
+    margin-top:20px;
   }
   .tex{
     margin-top: 10px; 
     padding-top: 10px;
 }
+
