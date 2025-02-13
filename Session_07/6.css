@@ -1,0 +1,68 @@
+*{
+    font-weight: bold;
+}
+.summary1 {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 800px;
+    margin:auto;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+summary::after {
+    content: "▼";
+    font-size: 14px;
+    transition: transform 0.3s;
+
+}
+
+.accordion-content{
+    width: 800px;
+    margin:auto;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+.summary2 {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 800px;
+    margin:auto;
+    border: 1px solid black;
+}
+
+.summary3 {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 800px;
+    margin:auto;
+    border: 1px solid black;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+details[open] summary {
+    background: #7c9dbf; /* Màu xanh dương */
+    color: white; /* Chữ trắng để dễ đọc */
+    border-radius: 5px; /* Bo góc giống ban đầu */
+}
+span{
+    color:rgb(223, 44, 74);
+}

@@ -20,12 +20,14 @@ div > h2{
 
 
 button {
-    display: block;
     width: 100px;
     padding: 8px;
-    margin: 10px auto; 
+    display: block;
     text-align: center;
+    margin-left: 200px;
 }
+
+
 
 
 

@@ -1,0 +1,14 @@
+.box{
+    width: 400px;
+    margin-left: 10px;
+}
+
+.imsg{
+    width: 400px;
+}
+.imgsao{
+    width: 30px;
+}
+h1{
+    display:inline;
+}
