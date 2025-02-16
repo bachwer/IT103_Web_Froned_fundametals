@@ -1,0 +1,51 @@
+*{
+    color:rgb(229, 210, 210);
+}
+
+
+.container{
+    width: 413px;
+    border-radius: 5px;
+}
+.form-group{
+    display: flex;
+    gap: 150px;
+    padding-bottom: 10px;
+    
+}
+input{
+    background-color: #524661;
+    border: 1px solid rgb(178, 172, 172);
+    border-radius: 5px;
+    height: 25px;
+}
+form{
+    padding: 30px;
+}
+.box{
+    display:flex;
+    gap:40px;
+    padding-bottom: 20px;
+}
+textarea{   
+    width: 343px;
+    height: 110px;
+    background-color: #524661;
+    border: 1px solid rgb(178, 172, 172);
+    border-radius: 5px;
+}
+body{
+    background-color: #524661;
+    color: #fff;
+}
+.box1{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+button{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff8f8;
+    border-radius: 5px;
+    padding: 10px 10px;
+}

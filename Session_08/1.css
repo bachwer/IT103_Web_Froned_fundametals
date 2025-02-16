@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+table{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 50%;
+}
+.box{
+    padding: 25px;
+    text-align: center;
+}
+.img{
+    padding: 30px;
+}
+.text{
+    padding: 30px;
+}
+img{
+    width: 100%;
+}
+button{
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left:40%;
+    margin-bottom: 20px;
+}
+td{
+    border: 1px solid #aaa4a4;
+}
+.std{
+    border-right:none;
+}
