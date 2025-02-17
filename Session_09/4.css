@@ -1,0 +1,31 @@
+body{
+    height: 100vh;
+}
+
+header{
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    display:flex;   
+    gap : 10px;
+}
+.sidebar{
+    flex-grow: 1;
+    background-color: green;
+    height: 600px;
+}
+.content{
+    flex-grow: 3;
+    background-color: red;
+    height: 600px;
+
+}
+footer{
+    background-color: #bc60f9;
+    color: white;
+    margin-top: 20px;
+    padding: 2px;
+}

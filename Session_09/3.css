@@ -1,0 +1,24 @@
+.container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;  
+    border: 1px solid black;
+    margin: auto;
+}
+
+.centered{
+    background-color:rgb(163, 118, 202);
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    flex:1;
+    margin: 10px;
+    border-radius: 5px;
+}   
+
+.item1{
+    grid-column: span 2;
+}

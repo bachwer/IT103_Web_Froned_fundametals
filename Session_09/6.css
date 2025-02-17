@@ -1,0 +1,28 @@
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    width: 50%;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: (2, auto);
+}
+
+.box{
+    display: flex;
+    background-color: rgb(44 63 80);
+    width: 210px;
+    height: 100px;
+    color: white;
+    margin: 5px;
+    justify-content: center;
+}
+.larger{
+    grid-row: span 2;
+    width: 400px;
+    height: 210px;
+}

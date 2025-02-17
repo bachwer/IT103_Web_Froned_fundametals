@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div{
+    display:flex;
+    background-color: rgb(144, 144, 233);
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+div p{
+    color:aliceblue;
+}
