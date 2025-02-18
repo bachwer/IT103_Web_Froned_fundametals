@@ -1,0 +1,118 @@
+.text-header{
+    display: flex;
+    gap: 500px;
+
+}
+main{
+    display: flex;
+    gap: 20px;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 20%;
+    height: 400px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b3/Hanashiro_Chomo.jpg");
+    border-radius: 20px;
+}
+
+
+.text-box1{
+    color: white;
+    padding-left: 20px;
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
+    background: rgb(2,0,36);
+    background: linear-gradient(94deg, rgba(2,0,36,1) 0%, rgba(171,173,151,0.9696472338935574) 0%, rgba(78,62,43,1) 95%);
+
+}
+.box2{
+    width: 20%;
+    height: 400px;
+    background-color: hsl(225deg 26.67% 94.12%);
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+.box2-in{
+    color: rgb(36, 37, 37);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+
+}
+.box2-in p{
+    font-size: 10px;
+    color: rgb(159, 161, 163);
+}
+.box2-in h3{
+   font-size: 15px
+}
+.box2-in img{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    border-radius: 5px;
+}
+button{
+    margin-left: 100px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(212, 215, 217);
+}
+
+.box3{
+    width: 50%;
+    height: 400px;
+    background-color: hsl(225deg 26.67% 94.12%);
+    border-radius: 20px;
+
+
+}
+.box3-in{
+    padding-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    gap: 200px;
+    margin-bottom: 3px ;
+}
+.box3-in-b{
+    padding-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    gap: 220px;
+    margin-bottom: 3px ;
+}
+.box3-in-GB{
+    display: flex;
+    gap: 45px;
+}
+.logo{
+    width: 25px;
+    height: 25px;
+}
+.box3-logo{
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    gap: 10px;
+}
+.box3-logo b{
+    font-size: 20px;
+}
+.border{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(171, 167, 167);
+}
+.Clubs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

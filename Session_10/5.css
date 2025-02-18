@@ -1,0 +1,44 @@
+*{
+    font-family: Arial, sans-serif;
+}
+
+
+body{
+    width: 100%;
+    background-color: hsl(0deg 0% 72.94%);
+}
+.container{
+    width:90%;
+    padding: 20px;
+    margin: auto;
+}
+img{
+    margin-top: 25px;
+    width: 250px;
+    border-radius: 8px;
+}
+
+
+.container-in1{
+    padding-top: 0px;
+    width: 50%;
+    display: flex;
+    border-bottom: 1px solid rgb(209, 203, 203);
+}
+.line2{
+    display: flex;
+    gap: 20px;
+    align-items: center ;
+}
+
+.line2 button{
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: hsl(212.07deg 32.58% 34.9%);
+    color: white;
+}
+
+.container-in11{
+    margin-left: 10px
+}

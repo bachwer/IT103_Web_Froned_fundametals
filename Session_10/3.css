@@ -1,0 +1,53 @@
+*{
+    font-family: Arial, sans-serif;
+}
+
+
+.container{
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    background-color:hsl(220deg 33.33% 98.24%);
+    padding: 4px;
+
+}
+.container-img {
+    display:flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    background-image: url("https://img.freepik.com/free-photo/basketball-equipment_155003-11457.jpg?t=st=1739868402~exp=1739872002~hmac=76f795b2f1cac3f7c1b24ba7cc9a66b11ea50d0c7a858ac59535e02ebd4d555b&w=2000");
+    background-size: contain;
+    border-radius: 10px;
+    height: 250px;
+}
+button{
+    margin-top: 10px;   
+    margin-right: 10px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: hsl(0deg 0% 0%);
+    color:aliceblue;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+
+}
+
+.avatar{
+    margin-top: 10px;;
+    width: 50px;
+    height: 50px;
+    background-color:aliceblue ;
+    border-radius: 100%;
+}
+.avatars{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.avatars p {
+    margin-top: 25px;
+}
+.date-text{
+    color: rgb(160, 156, 156);
+}

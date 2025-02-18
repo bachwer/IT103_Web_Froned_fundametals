@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&display=swap');
+
+
+.container h2{
+    font-family: "Great Vibes", serif;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.container{
+    width: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(229 229 229)  ;
+   margin: auto;
+
+}
+.container-text{
+    display:flex;
+    gap: 17px;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(152 152 152);
+}
+.container-text b{
+    color: rgb(50, 49, 49);
+}
+button{
+    padding: 5px 10px;
+    background-color: rgb(141 147 158);
+    border: none;
+    border-radius: 6px;
+    color:aliceblue
+}

@@ -1,0 +1,43 @@
+*{
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: rgb(244 231 208);
+}
+
+nav{
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style-type: none;
+    gap: 30px;
+    margin-right: 50px;
+}
+a{
+    font-weight: 800;
+}
+.text{
+    width: 35%;
+}
+.face-img{
+    width: 230px;
+    height: 230px;
+    border-radius: 100%
+}
+main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button{
+    margin-top:20px;
+    padding: 10px 25px;
+    background-color: hsl(0deg 100% 69.61%);
+    color: hsl(34.74deg 65.52% 88.63%);
+    border: none
+}
