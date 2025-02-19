@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 40px;
+}
+
+body {
+    padding: 10px;
+    background-color: #ccc4c4
+;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+header .box-icon{
+    display:none;
+}
+
+header h1 {
+    color: hsl(359, 36%, 45%);
+    font-size: 50px;
+}
+
+.header1 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(359, 36%, 45%);
+    text-align: center;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.header1 p {
+    font-size: 40px;
+    color: white;
+}
+
+/* Section chính */
+section {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.box-section1, .box-section2 {
+    display: flex;
+    background-color: hsl(359, 36%, 45%);
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+
+.box-section1 {
+    width: 65%;
+}
+
+.box-section2 {
+    width: 35%;
+}
+
+
+.box-column {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 100%;
+
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .box-column {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 300px 300px 300px;
+        padding-right:10px;
+    }
+}
+
+.box-section3 {
+    background-color: hsl(359, 36%, 45%);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer1 {
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: hsl(359, 36%, 45%);
+    color: white;
+    font-size: 30px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    .box-section1, .box-section2 {
+        width: 100%;
+    }
+
+    .box-column {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+
+.box-section3 {
+        width: 100%;
+    }
+
+    @media (max-width: 576px) {
+        .box-column {
+            grid-template-columns: 1fr;
+        }
+        header {
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+        header .box-icon{
+            display:flex;
+            width: 30%;
+            background: hsl(359, 36%, 45%);
+            height: 70px;
+            margin-left: 10px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        header h1 {
+            width: 50%;
+        }
+        header .header1{
+            width: 100%;
+            height: 170px;
+        }
+    }
