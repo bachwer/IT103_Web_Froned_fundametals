@@ -75,44 +75,33 @@ button{
 
 
 }
-.box3-in{
-    padding-top: 20px;
-    margin-left: 20px;
-    display: flex;
-    gap: 200px;
-    margin-bottom: 3px ;
-}
-.box3-in-b{
-    padding-top: 20px;
-    margin-left: 15px;
-    display: flex;
-    gap: 220px;
-    margin-bottom: 3px ;
-}
-.box3-in-GB{
-    display: flex;
-    gap: 45px;
-}
-.logo{
-    width: 25px;
-    height: 25px;
-}
-.box3-logo{
-    display: flex;
-    text-align: center;
-    justify-self: center;
-    gap: 10px;
-}
-.box3-logo b{
-    font-size: 20px;
-}
-.border{
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(171, 167, 167);
-}
-.Clubs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+.clubs-ranking {
+    flex: 1;
+  }
+  .clubs-ranking h2 {
+    margin-bottom: 10px;
+  }
+  .clubs-ranking table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .clubs-ranking th,
+  .clubs-ranking td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 14px;
+  }
+  .clubs-ranking thead {
+    background: #f4f4f4;
+  }
+  .clubs-ranking img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
