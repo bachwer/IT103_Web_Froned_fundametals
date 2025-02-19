@@ -96,12 +96,14 @@ p{
 }
 
 .box{
+    margin-right: 10px;
+    margin-left: 10px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 11px;
-    width: 440px;
+    width: 455px;
     height: 200px;  
     background-color:hsl(0deg 100% 25.1%);
 }
@@ -109,7 +111,7 @@ p{
     padding:10px;
     font-size: 15px;
     color:aliceblue;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 button{
     width: 200px;
