@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    div{
+        width: 600px;
+        height: 356px;
+        border: 1px solid red;
+        margin: auto;
+    }
+    .p1{
+        position:absolute;
+        top: 350px;
+        left: 700px;
+        font-size: 30px;
+    }
+    .p2{
+        position:absolute;
+        top: 153px;
+        left: 365px;
+        font-size: 30px;
+        transform: rotate(270deg);
+    }
+    .h1{
+        position:absolute;
+        top: 153px;
+        font-size: 30px;
+        margin-left: 45%;
+    }
+
+</style>
+<body>
+    <p class="p1">600</p>
+    <div>
+
+    </div>
+    <p class="p2">356</p>
+    
+</body>
+<script>
+    let width = 600;
+    let hieght = 365;
+
+    let area = width * hieght;
+
+    document.write("<h1 class='h1'>" + area+ "</h1>")
+</script>
+</html>

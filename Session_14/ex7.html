@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Montserrat", serif;
+        }
+        body{
+            background: #1a1a1a;
+        }
+        .box{
+            margin-left: 40px;
+            margin: auto;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            gap: 30px;
+            padding-top: 50px;
+            padding-left: 80px;
+            border-radius: 10px;
+            background: #0a0a0a;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+        }
+        button{
+            width: 140px;
+            height: 54px;
+            border:none;
+            border-radius: 50px;
+            background-color: #D3E97A;
+            font-family:"Bebas Neue", serif;
+            font-size: 20px;
+            color:#0a0a0a;
+            font-family: "Montserrat", serif;
+            font-weight: bold;
+        }.box1{
+            display:flex;
+            gap: 20px;
+        }
+        h2{
+            color:#D3E97A;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div class=box1>
+            <input type="number" id="math" name="math" min="0" placeholder="Math">
+            <input type="number" id="physics" name="physics" min="0" placeholder="Physics">
+            <input type="number" id="chemistry" name="chemistry" min="0" placeholder="chemistry">
+            <button onclick="average()">Check</button>
+        </div>
+        <div>
+         
+            <h2><p id="result"></p></h2>
+        </div>
+    </div>
+
+    <script>
+
+    function average(){
+            let math = parseFloat(document.getElementById("math").value);
+            let physics = parseFloat (document.getElementById("physics").value)
+            let chemistry = parseFloat(document.getElementById("chemistry").value);
+
+
+            if(math < 0 || physics < 0 || chemistry < 0){
+                document.getElementById("result") = "Error";
+                return;
+            }
+            if (isNaN(math) || isNaN(physics) || isNaN(chemistry)) {
+                document.getElementById("result").innerText = "Invalid";
+                return;
+            }
+
+
+            let resultAverage = (math + physics + chemistry) / 3;
+
+            if(resultAverage == 10){
+                document.getElementById("result").innerText = resultAverage.toFixed(2) + " : Xuat Xac";
+            }else if(resultAverage > 8){
+                document.getElementById("result").innerText = resultAverage.toFixed(2) + " : Gioi";
+            }else if((resultAverage > 6)){
+                document.getElementById("result").innerText = resultAverage.toFixed(2) + " : Kha";
+            }else{
+                document.getElementById("result").innerText = resultAverage.toFixed(2) + " : TB";
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
