@@ -5,8 +5,10 @@ let arrNumber = ["", "Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "T�
 if(part.length === 3){
     if(part[1] > 1){
         alert(arrNumber[part[0]] + " trăm " + arrNumber[part[1]] +" mươi " +arrNumber[part[2]] );
-    }else{
+    }else if(part[1] === "1"){
         alert(arrNumber[part[0]] + " trăm "  +"mười "+ arrNumber[part[2]] );
+    }else{
+        alert(arrNumber[part[0]] + " trăm "  +"linh "+ arrNumber[part[2]] );
     }
 }else if(part.length === 2){
     if(part[0] > 1){
