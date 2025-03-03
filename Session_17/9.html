@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let result0 = "javascript" + 5; //javascript5 nối chuỗi
+    let result1 = "javascript" - 1; //NaN - không dùng đc cho chuỗi nan (not a Number)
+    let result2 = "3" + 2;//32. nối chuỗi
+    let result3 = "5" - 4;//1 tu dong ep kiểu = 5 - 4 =. 1
+    let result4 =  isNaN("123");//False là tự động ép kiểu về số
+    let result5 = isNaN("hello");//true là chuỗi
+    let result6 = Number.isNaN("123");//false nó không ép kiểu trả nguyên giá trị
+    let result7 = Number.isNaN(NaN);//true đung vì bên trong isNanN(NaN)
+    console.log(result0);
+    console.log(result1);
+    console.log(result2);
+    console.log(result3);
+    console.log(result4);
+    console.log(result5);
+    console.log(result6);
+    console.log(result7);
+
+</script>
+</body>
+</html>
