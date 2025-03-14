@@ -41,13 +41,6 @@ async function main() {
         console.log("invalid number");
     }
 
-
-
-
-
-
-
-
 }
 
 main();
