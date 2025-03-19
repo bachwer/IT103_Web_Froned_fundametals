@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+</style>
+<body>
+
+<div>
+  <input type="text" id="User" placeholder="User">
+  <input type="password" id="pas" placeholder="password">
+  <button onclick="checkUser()" id="btn">Login</button>
+</div>
+
+<script>
+  function checkUser(){
+    let key = document.getElementById('User').value;
+    let pas = document.getElementById('pas').value;
+    if(key === "huanrose@gmail.com" && pas === "123456"){
+      console.log("Thanh cong nha")
+    }else{
+      console.log("that bai")
+    }
+  }
+</script>
+</body>
+</html>

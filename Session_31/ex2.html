@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="text">Toggle Dark/Light Mode</h1>
+<p class="text">Click button to toggle between dark and light mode for this page</p>
+<button onclick="toggleDark()">Toggle Dark mode</button>
+
+<script>
+  let check = false;
+  function toggleDark() {
+   let text = document.getElementsByClassName("text");
+
+
+   if (check) {
+     for(let element of text) {
+       element.style.color = "white";
+       document.body.style.backgroundColor = "black";
+     }
+   }else{
+     for(let element of text) {
+       element.style.color = "black";
+       document.body.style.backgroundColor = "white";
+     }
+   }
+   check = !check;
+
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .box{
+    display: flex;
+    gap: 30px
+  }
+  .box div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+  }
+</style>
+<body>
+<p>change background color</p>
+<p>Mouse click</p>
+
+<div class="box">
+  <div onclick="green()" style='background:green;'>
+    <p>Xanh</p>
+  </div>
+
+  <div onclick="red()" style='background:red;'>
+    <p>do</p>
+  </div>
+
+  <div onclick="purple()" style='background:purple;'>
+    <p>Tims</p>
+  </div>
+</div>
+
+
+<script>
+  function green(){
+    document.body.style.backgroundColor = "green";
+  }
+  function red(){
+    document.body.style.backgroundColor = "red";
+  }
+  function purple(){
+    document.body.style.backgroundColor = "purple";
+  }
+
+
+
+</script>
+
+</body>
+</html>
