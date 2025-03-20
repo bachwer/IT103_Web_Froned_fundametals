@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        font-size: 20px;
+        color: #422800;
+    }
+    img{
+        width: 100px;
+        margin: 10px;
+    }
+    .background-whenActivities{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  .background-whenActivities.show {
+    display: block;
+  }
+</style>
+<body>
+
+    <div>
+        <div onclick="off()" id="back" class="background-whenActivities"></div>
+
+
+
+        <img onclick="zoom(this)" src="https://i.pinimg.com/736x/30/03/c1/3003c1057e15ca93b5dd4f596ed37728.jpg" alt="google" id="img1">
+        <img onclick="zoom(this)" src="https://i.pinimg.com/736x/86/38/f6/8638f6da50473acb0725aae17dd6b9d5.jpg" alt="google" id="img2">
+        <img onclick="zoom(this)" src="https://i.pinimg.com/736x/98/53/96/985396c6883c1b1e4c919896fc44344d.jpg" alt="google" id="img3">
+
+
+        </div>
+    <script>
+       let zoomedImg = null
+        function zoom(img){
+            let back = document.getElementById('back');
+            document.getElementById("back").classList.add("show");
+            zoomedImg = img;
+            img.style.position = "fixed"; 
+            img.style.top = "50%"; 
+            img.style.left = "50%";
+            img.style.transform = "translate(-50%, -50%)"; 
+            img.style.width = 30 + "%";
+            img.style.height = 90 + "%";
+            img.style. objectFit = "contain";
+        }
+        function off(){
+            let back = document.getElementById('back');
+            back.classList.remove("show");
+
+            let img = back.dataset.zoomed;
+            if (zoomedImg) {
+        zoomedImg.style.position = "static"; 
+        zoomedImg.style.width = "100px";
+        zoomedImg.style.transform = "none";
+
+        zoomedImg = null; // Reset biến
+    }
+        }
+    </script>
+</body>
+</html>

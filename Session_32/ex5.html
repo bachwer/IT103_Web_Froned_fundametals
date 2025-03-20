@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+
+        width: 80%;
+        margin: auto;
+        background-color: rgb(234, 226, 226);
+        border-radius: 10px;
+        
+    }
+    .input{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 10px;
+    }
+    section{
+        margin:auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-top: 20px;
+    }
+    section input{
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        padding: 0 10px;
+    }
+    section button{
+        height: 50px;
+        width: 80px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        cursor: pointer;
+    }
+    section input::placeholder{
+        font-size: 20px;
+        color: rgb(187, 178, 178);
+    }
+    #list{
+        display:flex;
+        flex-direction: column;
+    }
+  
+    </style>
+<body>
+    <div class="box">
+        <section>
+            <input type="text" id="input" placeholder="Enter text">
+            <button onclick="change()">add</button>
+        </section>
+
+        <div class="input">
+            
+
+            <div id="list" class="list">
+
+                
+                </div>
+
+
+            </div>
+
+
+    </div>
+    <script>
+        function change() {
+            let input = document.getElementById('input').value;
+            let list = document.getElementById('list');
+
+            if(input !== ""){
+                let p = document.createElement('p');
+                let btn = document.createElement('button');
+                p.innerText = input;
+                btn.innerText = 'Delete';
+                btn.style.backgroundColor = 'red';
+                btn.style.color = 'white';
+                btn.style.border = 'none';
+                btn.style.marginLeft = '550px';
+                btn.style.borderRadius = '10px';
+                p.style.width = '600px';
+                p.style.padding = '10px';
+                p.style.borderBottom = '1px solid gray';
+                list.appendChild(p);
+                p.appendChild(btn);
+
+                btn.addEventListener('click', function() {
+            list.removeChild(p);
+        });
+
+            }
+         
+        }
+        </script>
+</body>
+</html>

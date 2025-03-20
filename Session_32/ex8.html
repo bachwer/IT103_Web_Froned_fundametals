@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .box{
+        margin-top: 20px;
+        width: 300px;
+        height: 20px;
+        background-color: #d8dee1;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+    }
+    .input{
+        text-align: center;
+    }
+    body{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tasks{
+        margin-bottom: 40px;
+    }
+    </style>
+<body>
+
+   <div class="input">
+        <h1>To do list k24</h1>
+        <input type="text" id="task" placeholder="Enter task"> 
+        <button onclick="add()">Add</button>
+   </div>
+    
+    <div id="taskList" class="taskList2">
+
+    </div>
+
+    <script>
+        function add(){
+            let input = document.getElementById("task").value;
+            let list = document.getElementById("taskList");
+
+            if(input === ""){
+                alert("Please enter a task");
+            }else{
+                let task = document.createElement("div");
+                let tasks = document.createElement("div");
+                let edit = document.createElement("button");
+                let del = document.createElement("button");
+                let text = document.createElement("span");
+                text.innerText = input;
+             
+                edit.innerText = 'sua';
+                del.innerText = 'xoa';
+
+               
+                task.classList.add("box");
+                edit.classList.add("edit");
+                del.classList.add("del");
+                tasks.classList.add("tasks");
+
+                task.appendChild(text);
+                tasks.appendChild(edit);
+                tasks.appendChild(del);
+
+
+                list.appendChild(task);
+                task.appendChild(tasks);
+
+                del.addEventListener('click', function() {
+                    list.removeChild(task);
+            });
+
+            edit.addEventListener('click', function() {
+                let newText = prompt("Enter new text");
+                text.innerText = newText;
+            });
+            }
+
+
+        }   
+
+
+
+        </script>
+</body>
+</html>

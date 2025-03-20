@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+
+/* CSS */
+.button-74 {
+  background-color: #f2fed1;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+</style>
+<body>
+    <button onclick="change()" class="button-74" role="button">Change</button>
+
+
+    <script>
+            let check = false;
+        function change() {
+
+
+            if(check == false){
+                document.body.style.backgroundColor = generateColor();
+                check = true;
+            }else{
+                document.body.style.backgroundColor = generateColor();
+                check = false;
+            }
+
+        }
+        function generateColor(){
+            const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+            let code = "";
+            for(let i=0; i<6; i++){
+            code += hexArray[Math.floor(Math.random()*15)];
+            }
+            return `#${code}`
+    }
+        
+    </script>
+</body>
+</html>

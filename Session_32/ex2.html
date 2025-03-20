@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+
+/* CSS */
+.button-74 {
+  background-color: #f2fed1;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #fff;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+h1{
+    text-align: center;
+    font-size: 300px;
+    color: #422800;
+}
+</style>
+<body>
+    <button onclick="change()" class="button-74" role="button">Change</button>
+    <h1 id='text'></h1>
+
+
+    <script>
+          let count = 0;
+    function change() {
+        count++;
+        document.getElementById('text').innerText = count;
+
+    }
+        
+    </script>
+</body>
+</html>

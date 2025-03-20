@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        font-size: 20px;
+        color: #422800;
+    }
+    button{
+        background-color: #f2fed1;
+        border: 2px solid #422800;
+        border-radius: 30px;
+        box-shadow: #422800 4px 4px 0 0;
+        color: #422800;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 0 18px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+</style>
+<body>
+
+    <h1 id="text">Thay đổi kích cỡ chữ</h1>
+    
+    <div>
+        <button onclick="changeSize(1)">+</button>
+        <button onclick="changeSize(-1)">-</button>
+    </div>
+    
+    <script>
+        let size = 20;
+        function changeSize(num){
+            size += num;
+            document.getElementById('text').style.fontSize = size + 'px';
+        }
+
+
+    </script>
+</body>
+</html>

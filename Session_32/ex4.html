@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="email" id="email">
+    <button onclick="change()">Check</button>
+    <h2 id="text"></h2>
+    <script>
+        
+        function change() {
+            let email = document.getElementById('email').value;
+            let check = true;
+            for(let i = 0; i < email.length; i++){
+                if(email[i] === ' '){
+                    check = false;
+                }
+                if(email.includes('@gmail.com')){
+                    check=true;
+                }else{
+                    check = false;
+                }
+            }
+
+            if(check){
+                document.getElementById('text').innerHTML = 'Email is true';
+                document.getElementById('text').style.color = 'green';
+
+                
+            }else{
+                document.getElementById('text').innerHTML = 'Email is valid';
+                document.getElementById('text').style.color = 'red';
+                
+            }
+        }
+    </script>
+</body>
+</html>
