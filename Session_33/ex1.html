@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/a5e9eda380.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .wrapper {
+        display: flex;
+        width: 40%;
+        background-color: #e4dede;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid #bab6b6;
+        border-radius: 5px;
+    }
+    .wrapper input {
+        width: 100%;
+        background-color: #e4dede;
+        border:none;
+    }
+
+
+</style>
+<body>
+
+<div class="wrapper">
+    <input type="password" name="" id="password" placeholder="Password">
+    <i onclick="eye()" class="fa-solid fa-eye"></i>
+</div>
+
+<script>
+    let check = false;
+    function eye() {
+        let password = document.getElementById('password');
+        if(check){
+            password.type = 'text';
+        }else{
+            password.type = 'password';
+        }
+        check = !check;
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -54,6 +54,7 @@
             }else{
                 let task = document.createElement("div");
                 let tasks = document.createElement("div");
+
                 let edit = document.createElement("button");
                 let del = document.createElement("button");
                 let text = document.createElement("span");
@@ -75,6 +76,9 @@
 
                 list.appendChild(task);
                 task.appendChild(tasks);
+
+
+
 
                 del.addEventListener('click', function() {
                     list.removeChild(task);

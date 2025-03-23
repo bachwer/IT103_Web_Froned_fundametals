@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label for="list">
+</label>
+<select name="list" id="list" >
+  <option value="0">Full</option>
+  <option value="1">Đồ ăn</option>
+  <option value="2">Nước</option>
+  <option value="3">Dụng Cụ</option>
+</select>
+<button onclick="check()">Lọc</button>
+
+<div id="result">
+
+</div>
+
+<script>
+  function check(){
+    let itemName = document.getElementById("list").value;
+    let box = document.getElementById("result");
+
+
+
+    box.innerHTML = "";
+    let list = {
+      ItemCode: [1,1,2,2,3,3],
+      name: ["Rau sạch", "Thịt lợn", "Pesi ko calo", "Cocacola", "Cờ lê", "Tuy vít"],
+      item:["Đồ ăn", "Nước", "Dụng cụ"]
+    }
+
+
+    for(let i = 0;i<list.ItemCode.length;i++){
+      if(parseInt(itemName) === 0|| list.ItemCode[i] === parseInt(itemName)){
+          let text = document.createElement("h2");
+          text.innerText = "Danh muc - " + list.name[i] + " - " + list.item[list.ItemCode[i] - 1];
+          box.appendChild(text);
+        }
+      }
+  }
+</script>
+</body>
+</html>
+
+
+

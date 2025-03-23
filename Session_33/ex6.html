@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 50%;
+            display: flex;
+            border: 1px solid #d5d7d8;
+            justify-content: space-between;
+            height: 35px;
+            border-radius: 5px;
+            background-color: #e7f0fe;
+            margin: auto;
+        }
+        .div1 input{
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+        .div1 button{
+            width: 20%;
+            border: none;
+            color:white;
+            background-color: #0066cc;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+
+        }
+        h1{
+            color: #0066cc;
+            display: inline-block;
+        }
+        body{
+            background-color: #eff8ff;
+            text-align: center;
+            align-items: center;
+        }
+        .box{
+            width: 40%;
+            text-align: left;
+            border: 1px solid #d5d7d8;
+            border-radius: 15px;
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 20px auto auto;
+        }
+        .boxIcon {
+            font-size: 70px;
+        }
+        .textNum{
+            font-size: 60px;
+        }
+
+        .box1{
+            display: inline-block;
+            padding-left: 15px;
+            font-size: 15px;
+            margin-top: 10px;
+
+
+        }.box3{
+            display: flex;
+            padding-left: 15px;
+            align-items: center;
+            gap : 18px;
+                 }
+
+    </style>
+</head>
+<body>
+
+    <h1>Ứng dụng thời tiết</h1>
+    <div class="div1">
+        <input type="search" name="" id="sear">
+       <button onclick="check()">Seacher</button>
+    </div>
+
+
+    <div id="box_weather">
+
+    </div>
+    
+    <script>
+        const weatherData = {
+            "Hà Nội": {
+                temperature: 25,
+                humidity: 70,
+                windSpeed: 5,
+                description: "Có mây",
+                icon: "☁️"
+            },
+            "Hồ Chí Minh": {
+                temperature: 32,
+                humidity: 75,
+                windSpeed: 7,
+                description: "Nắng",
+                icon: "☀️"
+            },
+            "Đà Nẵng": {
+                temperature: 28,
+                humidity: 82,
+                windSpeed: 12,
+                description: "Mưa rào",
+                icon: "🌧️"
+            }
+}
+        const cities = Object.keys(weatherData);
+
+function check(){
+     let input = document.getElementById("sear").value.toUpperCase();
+     let box = document.getElementById("box_weather");
+     box.innerHTML = "";
+
+
+
+    for(let i = 0; i < cities.length; i++){
+        if((cities[i].toUpperCase()).includes(input)){
+            let boxIn = document.createElement("div");
+            let name = document.createElement("h3");
+            let icon = document.createElement("span");
+            let num = document.createElement("span");
+            let boxIn1 = document.createElement("div");
+            let text = document.createElement("p");
+            let text1 = document.createElement("p");
+            let text2 = document.createElement("p");
+            let box3 = document.createElement("div");
+
+            name.innerText = cities[i];
+            icon.innerText = " " + weatherData[cities[i]].icon;
+            num.innerText =" " + weatherData[cities[i]].temperature + "°C";
+            text.innerText = weatherData[cities[i]].description;
+            text1.innerText = weatherData[cities[i]].humidity + "%";
+            text2.innerText = weatherData[cities[i]].windSpeed + " km/h";
+
+
+            boxIn.classList.add("box");
+            boxIn1.classList.add("box1");
+            num.classList.add("textNum");
+            icon.classList.add("boxIcon");
+            box3.classList.add("box3");
+
+            boxIn1.appendChild(text)
+            boxIn1.appendChild(text1)
+            boxIn1.appendChild(text2)
+
+            box3.appendChild(icon);
+            box3.appendChild(num);
+            box3.appendChild(boxIn1)
+
+
+
+            boxIn.appendChild(name);
+            boxIn.appendChild(box3);
+
+            box.appendChild(boxIn);
+        }
+    }
+
+
+}
+
+
+
+
+
+        </script>
+</body>
+</html>

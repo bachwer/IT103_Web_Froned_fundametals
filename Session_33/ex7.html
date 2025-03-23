@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+  h1{
+    text-align: center;
+  }
+  .container{
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+    gap: 20px;
+    margin: 10px;
+  }
+  .img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .money{
+    color:red;
+  }
+  .addButton{
+    padding: 8px 20px 8px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  body{
+    background-color: rgb(249, 249, 249)
+  }
+  .box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    margin-left: 100px;
+
+  }
+  .fullBox{
+    display: flex;
+  }
+  .box2{
+    width: 400px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px;
+    height: 250px;
+  }
+  .box2-in{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .box2-in p {
+    font-size: 20px;
+    color: gray;
+  }
+  .button1{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(67, 97, 238);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+  }
+  .addButton:hover {
+    background-color: #388e3c;
+  }
+  .button1:hover {
+    background-color: rgb(48, 74, 191);
+  }
+  .box1 h3{
+    text-align: center;
+    font-size: 20px;
+    margin-left: 100px;
+  }
+  .box2-in{
+    display: flex;
+    flex-direction: column;
+
+
+  }
+  .box2-in span{
+    text-align: left;
+  }
+  .box-in{
+    display: flex;
+    flex-direction: row;
+    gap : 10px;
+    width: 100%;
+    justify-content: space-between;
+     }
+
+  .box2-in2{
+    display: flex;
+    gap: 10px;
+  }
+
+
+</style>
+</head>
+<body>
+<h1>Cửa hàng đơn giản</h1>
+<div class="fullBox">
+
+  <div class="box1">
+    <h3>sản phẩm</h3>
+
+    <div class="box">
+      <div class="container">
+        <img class="img" src="https://cdn.tgdd.vn/Products/Images/42/335177/samsung-galaxy-a56-5g-green-thumb-600x600.jpg" alt="img">
+        <p>Điện thoại Samsung Galaxy A54</p>
+        <p class="money">7.490.000₫</p>
+        <button onclick="samsung()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+
+      <div class="container">
+        <img class="img" src="https://bizweb.dktcdn.net/100/446/400/products/laptop-dell-vostro-3490-1-gia-loc.jpg?v=1699258008053" alt="img">
+        <p>Laptop Dell Inspiron 15</p>
+        <p class="money">15.990.000₫</p>
+        <button onclick="latop()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FMT_WHH?wid=750&hei=556&fmt=jpeg&qlt=90&.v=1724041668836" alt="img">
+        <p>Tai nghe AirPods Pro</p>
+        <p class="money">4.990.000₫</p>
+        <button onclick="airpods()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXM23ref_FV99_VW_34FR+watch-case-46-aluminum-jetblack-nc-s10_VW_34FR+watch-face-46-aluminum-jetblack-s10_VW_34FR?wid=752&hei=720&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=TnVrdDZWRlZzTURKbHFqOGh0dGpVRW5TeWJ6QW43NUFnQ2V4cmRFc1VnYUdWejZ5THhpKzJwRmRDYlhxN2o5aXB2QjR6TEZ4ZThxM3VqYkZobmlXM3RGNnlaeXQ4NGFKQTAzc0NGeHR2aVk0VEhOZEFKYmY1ZHNpalQ3YVhOWk9WVlBjZVFuazArV21YaFcvTVJ5dzR2eDMxaWg4TFhITTVrUW41Z084dENpYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNL3gwYlE3R0w4Z1RCbG9qQTd1MjYyL1owaE5aVCt2Ri82aDRacTg0bXlaZA" alt="img">
+        <p>Đồng hồ thông minh Apple Watch</p>
+        <p class="money">8.990.000₫</p>
+        <button onclick="appleWatch()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://cdn.vjshop.vn/may-anh/mirrorless/canon/canon-eos-r50/black-18-45/canon-eos-r50-lens-18-45mm-500x500.jpg" alt="img">
+        <p>Máy ảnh Canon EOS M50</p>
+        <p class="money">12.490.000₫</p>
+        <button onclick="camera()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://bizweb.dktcdn.net/100/445/498/products/jbl-go-4-3-4-left-black-48178-x1.jpg?v=1732646465910" alt="img">
+        <p>Loa Bluetooth JBL Flip 5</p>
+        <p class="money">2.190.000₫</p>
+        <button onclick="speaker()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1MvD76Mt-Ne0IC2DPMMsTZpG05xDxJOzkqw&s" alt="img">
+        <p>Bàn phím cơ Logitech G Pro</p>
+        <p class="money">2.490.000₫</p>
+        <button onclick="keyboard()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="container">
+        <img class="img" src="https://product.hstatic.net/200000722513/product/h_mx_master_3_wireless__graphite_.jpg_1e5491e35f754dcc90b90582a9c3be95_ca0c63ca59de4ed1b4d46fcc5c81c1ed.png" alt="img">
+        <p>Chuột không dây Logitech MX Master</p>
+        <p class="money">1.890.000₫</p>
+        <button onclick="mouse()" class="addButton">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="box2" id="box2">
+    <h3>Giỏ Hàng</h3>
+
+    <div class="box2-in" id="box2-in">
+
+      <p id="box2-message">Giỏ hàng trống</p>
+
+    </div>
+    <h3 id="total">Tổng: <span id="money"></span></h3>
+
+    <button onclick="total()" class="button1">Thanh Toán</button>
+  </div>
+
+
+
+</div>
+
+<script>
+  let totalMoney = 0;
+  let arr =[];
+  let index = 0;
+
+
+
+
+
+
+  function samsung(){
+      let name = "Điện thoại Samsung Galaxy A54";
+      let price = 7490000;
+      product(name, price);
+
+
+  }
+  function latop(){
+    let name = "Laptop Dell Inspiron 15";
+    let price = 15990000;
+
+    product(name, price);
+
+  }
+  function airpods() {
+    let name = "Tai nghe AirPods Pro";
+    let price = 4990000;
+    product(name, price);
+  }
+
+  function appleWatch() {
+    let name = "Đồng hồ thông minh Apple Watch";
+    let price = 8990000;
+    product(name, price);
+  }
+
+  function camera() {
+    let name = "Máy ảnh Canon EOS M50";
+    let price = 12490000;
+    product(name, price);
+  }
+
+  function speaker() {
+    let name = "Loa Bluetooth JBL Flip 5";
+    let price = 2190000;
+    product(name, price);
+  }
+
+  function keyboard() {
+    let name = "Bàn phím cơ Logitech G Pro";
+    let price = 2490000;
+    product(name, price);
+  }
+
+  function mouse() {
+    let name = "Chuột không dây Logitech MX Master";
+    let price = 1890000;
+    product(name, price);
+  }
+
+  function product(name, price){
+    let box22 = document.getElementById("box2");
+    let p = document.getElementById("box2-message");
+    let id = document.getElementById("");
+    p.style.display = "none";
+    box22.style.height = +box22.offsetHeight + "px";
+
+    let boxF = document.getElementById("box2-in");
+
+    let box = document.createElement("div");
+    let box2 = document.createElement("div");
+    let box2Text = document.createElement("span");
+    let box2Text1 = document.createElement("span");
+    let btnMinus = document.createElement("button");
+    let btnPlus = document.createElement("button");
+    let btnDelete= document.createElement("button");
+    let num = document.createElement("span");
+    let boxCheck= document.createElement("div");
+    let soLug = 1;
+
+
+
+    btnMinus.innerText= "-";
+    btnPlus.innerText= "+";
+    btnDelete.innerText= "X";
+    num.innerText= soLug;
+    box2Text.innerText=name;
+    box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
+
+    num.id="numText"
+    box2.classList.add("box2-in");
+    box.classList.add("box-in");
+    boxCheck.classList.add("box2-in2");
+
+    box2.appendChild(box2Text);
+    box2.appendChild(box2Text1);
+    box.appendChild(box2);
+
+
+
+      boxCheck.appendChild(btnMinus);
+      boxCheck.appendChild(num);
+      boxCheck.appendChild(btnPlus);
+      boxCheck.appendChild(btnDelete);
+      box.appendChild(boxCheck);
+      boxF.appendChild(box);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  box2.style.alignItems= "start";
+  box.style.borderBottom="1px solid #c3bcbc";
+  box.style.alignItems= "start";
+
+
+
+    totalMoney = totalMoney + price * soLug;
+    btnDelete.addEventListener('click', function() {
+      boxF.removeChild(box);
+      arr = arr.filter(item => item !== name);
+      totalMoney = totalMoney - price * soLug;
+
+      soLug = 0;
+    });
+
+    btnPlus.addEventListener('click', function() {
+      soLug++;
+      totalMoney = totalMoney + price;
+      box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
+
+      money(soLug);
+    });
+
+
+    btnMinus.addEventListener('click', function() {
+      soLug--;
+      num.innerText= soLug;
+      totalMoney = totalMoney - price;
+        box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
+      money(soLug);
+      if(soLug < 1){
+        soLug = 0;
+        totalMoney = totalMoney - price * soLug;
+
+
+
+        boxF.removeChild(box);
+
+      }
+    });
+
+
+  }
+
+  function money(){
+    document.getElementById('money').innerText =  totalMoney.toLocaleString();
+
+  }
+
+  setInterval(money, 1);
+
+</script>
+
+
+</body>
+</html>
