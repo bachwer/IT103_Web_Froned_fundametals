@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  table{
+    border: 1px solid #cac3c3;
+    padding: 10px;
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 10px;
+    border: 1px solid #cac3c3;
+
+  }
+  td:first-child {
+    border-right: 1px solid #cac3c3;
+  }
+
+  table th {
+    border: 1px solid #cac3c3;
+  }
+  .row td {
+    border: 1px solid #cac3c3;
+    padding: 0;
+  }
+</style>
+<body>
+<table>
+  <tr>
+    <td>
+      tên nhân viên:
+      <label for="name"></label><input type="text" id="name" >
+    </td>
+    <td>
+     Chức vụ:
+        <label for="name"></label><input type="text" id="Position" >
+    </td>
+  </tr>
+</table>
+<button onclick="add()">Thêm NV</button>
+
+
+<table id ="table1">
+  <tr>
+    <th style="width: 60px; background-color: #eae7e7">STT</th>
+    <th style="width: 400px; background-color: #eae7e7" >Tên</th>
+    <th style="width: 200px; background-color: #eae7e7">Chức vụ</th>
+  </tr>
+</table>
+
+
+<script>
+  let num = 0;
+
+  function add(){
+    num++;
+    let na = document.getElementById('name').value;
+    let pos = document.getElementById('Position').value;
+
+    let table1 = document.getElementById("table1");
+
+    if( na === "" || pos === "" ){
+      alert("invalid");
+    }else{
+      let row = document.createElement("tr")
+      let box1 = document.createElement("td")
+      let box2 = document.createElement("td")
+      let box3 = document.createElement("td")
+
+      let index = document.createElement("p");
+      let name = document.createElement("p");
+      let position = document.createElement("p");
+
+      index.innerText=num.toString();
+      name.innerText=na;
+      position.innerText=pos;
+
+      box1.appendChild(index);
+      box2.appendChild(name);
+      box3.appendChild(position);
+
+      box1.classList.add("row");
+      row.appendChild(box1);
+      row.appendChild(box2);
+      row.appendChild(box3);
+      table1.appendChild(row);
+    }
+
+
+    document.getElementById('name').value = "";
+    document.getElementById('Position').value ="";
+  }
+
+</script>
+
+
+
+</body>
+</html>

@@ -202,18 +202,20 @@
 
 
 
-
+  let s = 0;
   function samsung(){
       let name = "Điện thoại Samsung Galaxy A54";
       let price = 7490000;
-      product(name, price);
+      s++;
+      product(name, price, s);
+
+
 
 
   }
   function latop(){
     let name = "Laptop Dell Inspiron 15";
     let price = 15990000;
-
     product(name, price);
 
   }
@@ -253,14 +255,25 @@
     product(name, price);
   }
 
-  function product(name, price){
-    let box22 = document.getElementById("box2");
-    let p = document.getElementById("box2-message");
-    let id = document.getElementById("");
-    p.style.display = "none";
-    box22.style.height = +box22.offsetHeight + "px";
-
+  function product(name, price, s){
     let boxF = document.getElementById("box2-in");
+    let existingProduct = Array.from(boxF.children).find(el =>
+        el.querySelector("span:first-child")?.innerText === name
+    );
+
+    if (existingProduct) {
+        let numText = existingProduct.querySelector("#numText");
+        let numX = existingProduct.querySelector("#numX");
+
+        let currentCount = parseInt(numText.innerText);
+        currentCount++;
+        numText.innerText = currentCount;
+        numX.innerText = price.toLocaleString() + " x " + currentCount;
+
+        totalMoney += price;
+        money(currentCount);
+        return;
+    }
 
     let box = document.createElement("div");
     let box2 = document.createElement("div");
@@ -270,10 +283,9 @@
     let btnPlus = document.createElement("button");
     let btnDelete= document.createElement("button");
     let num = document.createElement("span");
+
     let boxCheck= document.createElement("div");
     let soLug = 1;
-
-
 
     btnMinus.innerText= "-";
     btnPlus.innerText= "+";
@@ -282,7 +294,8 @@
     box2Text.innerText=name;
     box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
 
-    num.id="numText"
+    box2Text1.id="numX";
+    num.id="numText";
     box2.classList.add("box2-in");
     box.classList.add("box-in");
     boxCheck.classList.add("box2-in2");
@@ -291,78 +304,55 @@
     box2.appendChild(box2Text1);
     box.appendChild(box2);
 
+    boxCheck.appendChild(btnMinus);
+    boxCheck.appendChild(num);
+    boxCheck.appendChild(btnPlus);
+    boxCheck.appendChild(btnDelete);
+    box.appendChild(boxCheck);
+    boxF.appendChild(box);
 
+    box.style.borderBottom="1px solid #c3bcbc";
+    box.style.alignItems= "start";
 
-      boxCheck.appendChild(btnMinus);
-      boxCheck.appendChild(num);
-      boxCheck.appendChild(btnPlus);
-      boxCheck.appendChild(btnDelete);
-      box.appendChild(boxCheck);
-      boxF.appendChild(box);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  box2.style.alignItems= "start";
-  box.style.borderBottom="1px solid #c3bcbc";
-  box.style.alignItems= "start";
-
-
-
-    totalMoney = totalMoney + price * soLug;
+    totalMoney += price;
     btnDelete.addEventListener('click', function() {
-      boxF.removeChild(box);
-      arr = arr.filter(item => item !== name);
-      totalMoney = totalMoney - price * soLug;
-
-      soLug = 0;
+        boxF.removeChild(box);
+        totalMoney -= price * soLug;
+        money(soLug);
     });
 
     btnPlus.addEventListener('click', function() {
-      soLug++;
-      totalMoney = totalMoney + price;
-      box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
-
-      money(soLug);
+        soLug++;
+        num.innerText = soLug;
+        box2Text1.innerText = price.toLocaleString() + " x " + soLug;
+        totalMoney += price;
+        money(soLug);
     });
-
 
     btnMinus.addEventListener('click', function() {
-      soLug--;
-      num.innerText= soLug;
-      totalMoney = totalMoney - price;
-        box2Text1.innerText=price.toLocaleString() + " x "+ soLug;
-      money(soLug);
-      if(soLug < 1){
-        soLug = 0;
-        totalMoney = totalMoney - price * soLug;
-
-
-
-        boxF.removeChild(box);
-
-      }
+        if (soLug > 1) {
+            soLug--;
+            num.innerText = soLug;
+            box2Text1.innerText = price.toLocaleString() + " x " + soLug;
+            totalMoney -= price;
+        } else {
+            boxF.removeChild(box);
+            totalMoney -= price;
+        }
+        money(soLug);
     });
 
-
+    money(soLug);
   }
 
-  function money(){
+  function money(soLug){
+    soLug.toString()
     document.getElementById('money').innerText =  totalMoney.toLocaleString();
-
+    document.getElementById('numText').innerHTML =  soLug;
+    document.getElementById('numX').textContent = soLug;
   }
 
-  setInterval(money, 1);
+   setInterval(money, 100);
 
 </script>
 

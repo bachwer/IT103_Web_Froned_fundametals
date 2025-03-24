@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .div1{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+      padding: 10px;
+      margin: auto;
+
+    }
+    .div1 h2{
+      text-align: center;
+    }
+
+    .div1 label{
+      color: gray;
+    }
+    .div1 input{
+      border-radius: 5px;
+      height: 35px;
+      border: 1px solid gray;
+    }
+    .div1 input::placeholder{
+      padding: 10px;
+    }
+    .div1 button{
+      border-radius: 5px;
+      height: 35px;
+      border: none;
+      background-color: #1a5ff8;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .div1 button:hover{
+      background-color: #275bd1;
+    }
+    .text{
+      display: flex;
+      justify-content: space-around;
+    }
+
+  </style>
+</head>
+<body>
+<div class="div1">
+  <h2>Login</h2>
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" placeholder="Enter your Email address">
+  <label for="password">Password: </label><input type="password" name="password" id="password" placeholder="Enter your password">
+  <button onclick="login()">Login</button>
+
+  <div class="text">
+    <a href="ex1.html" ><span style="color: #4683b5">Forgot password</span></a>
+    <span>or</span>
+    <a href="ex1.html"><span style="color: #4683b5">Sign Up</span></a>
+  </div>
+
+
+</div>
+
+<script>
+  function login(){
+    localStorage.setItem("ema", "admin@admin.com");
+    localStorage.setItem("pas", "admin");
+
+
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+    if(email === localStorage.getItem("ema") && password === localStorage.getItem("pas")){
+      alert("Successfully logged in")
+    }else{
+      alert("Invalid email or password")
+    }
+
+  }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .input{
+        height: 25px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .container{
+        display: flex;
+        gap: 10px;
+    }
+    .container select{
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+    .container button{
+        border: none;
+        background-color: #336aef;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .container button:hover{
+        background-color: #003fe8;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    table th{
+        text-align: center;
+        border: none;
+        background-color: #bfcdd8;
+        padding: 10px;
+
+    }
+    table{
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    table td{
+        border-bottom: 1px solid #b3afaf;
+        border-top: 1px solid #b3afaf;
+        padding: 10px;
+
+    }
+</style>
+<body>
+<h1>Task Management</h1>
+
+
+<div class="container">
+    <label for="taskName"></label><input class="input" type="text" id="taskName" placeholder="Content">
+    <label for="taskDate"></label><input class="input" type="date" id="taskDate" >
+    <label for="Status"></label><select  id="Status">
+
+    <option value="Active" disabled selected>choose  status</option>
+    <option value="Active">Pending</option>
+    <option value="Active">Active</option>
+    <option value="Active">off</option>
+    </select>
+    <label for="UserName"></label><input class="input" type="text" id="UserName" placeholder="User Name">
+    <button  onclick="addTask()">Submit</button>
+
+</div>
+
+<div class="container2">
+    <table  id ="rowAdd">
+        <tr>
+            <th style="width: 30px">#</th>
+            <th style="width: 300px">Content</th>
+            <th style="width: 100px">Due date</th>
+            <th style="width: 100px">Status</th>
+            <th style="width: 150px">Assigned to</th>
+            <th style="width: 160px" colspan="2">Action</th>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+    let num = 0;
+    function addTask(){
+        num++;
+        let taskName = document.getElementById("taskName").value;
+        let taskDate = document.getElementById("taskDate").value;
+        let status = document.getElementById("Status").value;
+        let userName = document.getElementById("UserName").value;
+
+
+
+
+        if(taskName === ""){
+            alert("Please enter task name")
+        }
+        else if(taskDate === ""){
+            alert("Please enter task date")
+        }
+        else if(status === ""){
+            alert("Please enter task status")
+        }
+        else if(userName === ""){
+            alert("Please enter user name")
+        }else{
+
+            let box=document.getElementById("rowAdd");
+            let fullBox = document.createElement("tr");
+            let number = document.createElement("td")
+            let task = document.createElement("td");
+            let date = document.createElement("td");
+            let sts = document.createElement("td");
+            let name = document.createElement("td");
+            let actionE = document.createElement("td");
+            let actionD = document.createElement("td");
+            let edit = document.createElement("button");
+            let del = document.createElement("button");
+
+            number.innerText= num.toString();
+            task.innerText = taskName;
+            date.innerText = taskDate;
+            sts.innerText = status;
+            name.innerText = userName;
+
+            edit.innerText = "Edit";
+            del.innerText = "Delete";
+
+            fullBox.appendChild(number)
+            fullBox.appendChild(task)
+            fullBox.appendChild(date)
+            fullBox.appendChild(sts)
+            fullBox.appendChild(name)
+
+            actionE.appendChild(edit)
+            actionD.appendChild(del)
+            fullBox.appendChild(actionE)
+            fullBox.appendChild(actionD)
+            box.appendChild(fullBox)
+
+
+            document.getElementById("taskName").value = "";
+            document.getElementById("taskDate").value = "";
+            document.getElementById("Status").value = "Active";
+            document.getElementById("UserName").value = "";
+
+
+            del.addEventListener('click', function() {
+                box.removeChild(fullBox);
+                UpdateNumber();
+            });
+
+            edit.addEventListener('click', function() {
+                task.innerText = prompt("taskName eidt");
+                date.innerText  = prompt("taskDate (YYYY-MM-DD):", date.innerText);
+                sts.innerText = prompt("Status edit (Pending, Active, Off):", sts.innerText);
+                name.innerText = prompt("UserName eidt");
+
+            });
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+    }
+    function UpdateNumber(){
+        let rows = document.querySelectorAll("#rowAdd tr");
+
+        for(let i = 1; i < rows.length; i++){
+            rows[i].children[0].innerText = i;
+        }
+        num = rows.length - 1;
+
+
+    }
+</script>
+
+</body>
+</html>
