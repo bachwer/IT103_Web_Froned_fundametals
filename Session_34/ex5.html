@@ -5,99 +5,131 @@
     <title>Title</title>
 </head>
 <style>
-  table{
+  table {
     border: 1px solid #cac3c3;
     padding: 10px;
     border-collapse: collapse;
+    width: 80%;
+      margin: auto;
   }
 
-  td {
+  th, td {
     padding: 10px;
     border: 1px solid #cac3c3;
-
-  }
-  td:first-child {
-    border-right: 1px solid #cac3c3;
+    text-align: left;
   }
 
-  table th {
-    border: 1px solid #cac3c3;
+  th {
+    background-color: #eae7e7;
   }
+
   .row td {
-    border: 1px solid #cac3c3;
     padding: 0;
+  }
+  p{
+      display: inline;
   }
 </style>
 <body>
 <table>
   <tr>
     <td>
-      tên nhân viên:
-      <label for="name"></label><input type="text" id="name" >
+      Tên nhân viên:
+      <label for="name"><input type="text" id="name"></label>
     </td>
     <td>
-     Chức vụ:
-        <label for="name"></label><input type="text" id="Position" >
+      Chức vụ:
+      <label for="Position"><input type="text" id="Position"></label>
     </td>
   </tr>
 </table>
 <button onclick="add()">Thêm NV</button>
 
-
 <table id ="table1">
   <tr>
-    <th style="width: 60px; background-color: #eae7e7">STT</th>
-    <th style="width: 400px; background-color: #eae7e7" >Tên</th>
-    <th style="width: 200px; background-color: #eae7e7">Chức vụ</th>
+    <th style="width: 60px;">STT</th>
+    <th style="width: 400px;">Tên</th>
+    <th style="width: 200px;">Chức vụ</th>
   </tr>
 </table>
 
-
 <script>
-  let num = 0;
 
-  function add(){
+  const NumInPage = 3;
+  let num = name.length;
+  let PageNum = 1;
+  let indexNum = 0;
+  let table = {
+      name: [],
+      Position: [],
+  }
+  function mac() {
+      let storedData = localStorage.getItem("employeeTable");
+      if (storedData) {
+          table = JSON.parse(storedData);
+          num = table.name.length;
+          for (let i = 0; i < num; i++) {
+              show(table.name[i], table.Position[i], i + 1);
+          }
+      }
+  }
+  mac();
+  function add() {
     num++;
     let na = document.getElementById('name').value;
     let pos = document.getElementById('Position').value;
 
-    let table1 = document.getElementById("table1");
 
-    if( na === "" || pos === "" ){
-      alert("invalid");
-    }else{
-      let row = document.createElement("tr")
-      let box1 = document.createElement("td")
-      let box2 = document.createElement("td")
-      let box3 = document.createElement("td")
 
-      let index = document.createElement("p");
-      let name = document.createElement("p");
-      let position = document.createElement("p");
 
-      index.innerText=num.toString();
-      name.innerText=na;
-      position.innerText=pos;
+    if (na.trim() === "" || pos.trim() === "") {
+      alert("Vui lòng nhập đầy đủ thông tin.");
+      return;
+    } else {
+        table.name.push(na);
+        table.Position.push(pos);
+        localStorage.setItem("employeeTable", JSON.stringify(table));
 
-      box1.appendChild(index);
-      box2.appendChild(name);
-      box3.appendChild(position);
+        show(na, pos);
 
-      box1.classList.add("row");
-      row.appendChild(box1);
-      row.appendChild(box2);
-      row.appendChild(box3);
-      table1.appendChild(row);
     }
+      console.log(table.name);
+      console.log(table.Position);
 
 
     document.getElementById('name').value = "";
-    document.getElementById('Position').value ="";
+    document.getElementById('Position').value = "";
+  }
+
+
+  function show(na, pos){
+          let table1 = document.getElementById('table1');
+          let row = document.createElement("tr")
+          let box1 = document.createElement("td")
+          let box2 = document.createElement("td")
+          let box3 = document.createElement("td")
+
+          let index = document.createElement("p");
+          let name = document.createElement("p");
+          let position = document.createElement("p");
+
+          index.innerText = indexNum.toString();
+          name.innerText = na;
+          position.innerText = pos;
+
+          box1.appendChild(index);
+          box2.appendChild(name);
+          box3.appendChild(position);
+
+          box1.classList.add("row");
+          row.appendChild(box1);
+          row.appendChild(box2);
+          row.appendChild(box3);
+          table1.appendChild(row);
+      }
   }
 
 </script>
-
-
 
 </body>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="ex5.css">
+  <script src="https://kit.fontawesome.com/a5e9eda380.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Danh mục</h1>
+  <button id="addProduct">Thêm Mới danh mục</button>
+</div>
+
+<div class="container-1">
+  <div class="container-1-input">
+    <label for="box-message"></label><input type="text" id="box-message" name="search" placeholder="Tìm kiếm danh sách mục theo tên" >
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+
+  <label>
+    <select>
+      <option value="1">Đang hoạt động</option>
+      <option value="2">Ngừng hoạt động</option>
+    </select>
+  </label>
+</div>
+
+<div class="container-2">
+<table class="table">
+  <tr>
+    <td style="width: 20%;" class="tdc">Mã danh mục <i class="fa-solid fa-arrow-down"></i></td>
+    <td style="width: 40%;" class="tdc">Tên danh mục <i class="fa-solid fa-arrow-down"></i></td>
+    <td style="width: 20% " class="tdc">Trạng thái</td>
+    <td style="width: 20% " class="tdc">Chức năng</td>
+  </tr>
+
+
+</table>
+</div>
+
+<div class="input-inf" id="input-inf">
+
+
+
+
+  <div class="input-inf-input" >
+    <h3>Thêm mới danh mục</h3>
+    <i id="close" class="fa-solid fa-xmark"></i>
+  </div>
+
+  <div class="in-in-f">
+    <label for="codeProduct">Mã danh mục</label>
+    <input type="text" id="codeProduct">
+    <p id="redText">Mã danh mục không được để trống</p>
+  </div>
+
+  <div class="in-in-f">
+    <label for="nameProduct">Tên danh mục<br>
+      <input type="text" id="nameProduct">
+      <p id="redText2">Tên danh mục không được để trống</p>
+    </label>
+
+  </div>
+
+
+  <div class="in-in-section">
+    <label>
+      <input type="radio" id="active" name="status" value="active">
+      Đang hoạt động
+    </label>
+    <label>
+      <input type="radio" id="noActive" name="status" value="inactive">
+      Ngừng hoạt động
+    </label>
+  </div>
+
+  <div class="in-in-b">
+    <button class="add" id="add">Thêm</button>
+    <button class="cancel" id="cancel">Huỷ</button>
+
+  </div>
+
+
+</div>
+
+<script src="ex5.js">
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table{
+    border: 1px solid #cac3c3;
+    padding: 10px;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10px;
+
+  }
+
+  td {
+    padding: 10px;
+    border: 1px solid #cac3c3;
+
+  }
+  td:first-child {
+    border-right: 1px solid #cac3c3;
+  }
+
+  table th {
+    border: 1px solid #cac3c3;
+  }
+  .row td {
+    border: 1px solid #cac3c3;
+    padding: 0;
+  }
+  p{
+    display: inline;
+  }
+ body{
+   text-align: center;
+ }
+ .tablee{
+   margin-top: 10px;
+ }
+</style>
+<body>
+<table>
+  <tr>
+    <td>
+      tên nhân viên:
+      <label for="name"></label><input type="text" id="name" >
+    </td>
+    <td>
+      Chức vụ:
+      <label for="name"></label><input type="text" id="Position" >
+    </td>
+  </tr>
+</table>
+<button onclick="add()">Thêm NV</button>
+
+
+<table id ="table1" class="tablee">
+  <tr>
+    <th style="width: 60px; background-color: #eae7e7">STT</th>
+    <th style="width: 400px; background-color: #eae7e7" >Tên</th>
+    <th style="width: 200px; background-color: #eae7e7">Chức vụ</th>
+  </tr>
+</table>
+
+<div id="btn" class="allBtn">
+</div>
+
+
+<script>
+
+  const NumInPage = 3;
+  let num = 0;
+  let PageNum = 1;
+  let indexNum = 0;
+  let table = {
+    name: [],
+    Position: [],
+  }
+  function mac() {
+    let storedData = localStorage.getItem("employeeTable");
+    if (storedData) {
+      table = JSON.parse(storedData);
+      num = table.name.length;
+      indexNum = 0;
+      let table1 = document.getElementById('table1');
+
+      let rows = table1.getElementsByTagName("tr");
+      while (rows.length > 1) {
+        table1.removeChild(rows[1]);
+      }
+      for (let i = 0; i < num; i++) {
+        show(table.name[i], table.Position[i], i + 1);
+      }
+    }
+  }
+  mac();
+  btn();
+  function add() {
+    num++;
+    let na = document.getElementById('name').value;
+    let pos = document.getElementById('Position').value;
+
+
+
+
+    if (na.trim() === "" || pos.trim() === "") {
+      alert("Vui lòng nhập đầy đủ thông tin.");
+      return;
+    } else {
+      table.name.push(na);
+      table.Position.push(pos);
+      localStorage.setItem("employeeTable", JSON.stringify(table));
+
+      show(na, pos);
+
+
+    }
+    console.log(table.name);
+    console.log(table.Position);
+
+
+    document.getElementById('name').value = "";
+    document.getElementById('Position').value = "";
+  }
+
+
+  function show(na, pos){
+    let table1 = document.getElementById('table1');
+
+    indexNum++;
+      if(indexNum > ((NumInPage*PageNum) - 3) && indexNum < (NumInPage*PageNum) + 1) {
+      let row = document.createElement("tr")
+      let box1 = document.createElement("td")
+      let box2 = document.createElement("td")
+      let box3 = document.createElement("td")
+
+      let index = document.createElement("p");
+      let name = document.createElement("p");
+      let position = document.createElement("p");
+
+      index.innerText = indexNum.toString();
+      name.innerText = na;
+      position.innerText = pos;
+
+      box1.appendChild(index);
+      box2.appendChild(name);
+      box3.appendChild(position);
+
+      box1.classList.add("row");
+      row.appendChild(box1);
+      row.appendChild(box2);
+      row.appendChild(box3);
+      table1.appendChild(row);
+
+    }
+  }
+
+  function btn(){
+    let box = document.getElementById("btn");
+    box.innerHTML = "";
+    let newBtn = document.createElement("button");
+    newBtn.innerText = "Previous";
+    newBtn.addEventListener("click", function() {
+      PageNum = 1;
+      mac();
+    });
+    box.appendChild(newBtn);
+
+  for(let i = 0; i < Math.ceil(num/3); i++){
+    let newBtn = document.createElement("button");
+    newBtn.innerText = (i + 1).toString();
+  newBtn.addEventListener("click", function() {
+    PageNum = +(this.innerText);
+    mac();
+  });
+    box.appendChild(newBtn);
+  }
+
+    let BTN = document.createElement("button");
+    BTN.innerText = "Next";
+    BTN.addEventListener("click", function() {
+
+
+      if(PageNum >= Math.ceil(num/3)) {
+        alert("Invalid")
+      }else{
+        PageNum++;
+      }
+      mac();
+    });
+    box.appendChild(BTN);
+
+  }
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

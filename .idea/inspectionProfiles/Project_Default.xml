@@ -6,11 +6,13 @@
       <option name="myIgnoreVendorSpecificProperties" value="false" />
       <option name="myCustomPropertiesList">
         <value>
-          <list size="4">
+          <list size="6">
             <item index="0" class="java.lang.String" itemvalue="background-img" />
             <item index="1" class="java.lang.String" itemvalue="marign-top" />
             <item index="2" class="java.lang.String" itemvalue="solid" />
             <item index="3" class="java.lang.String" itemvalue="backgorund-color" />
+            <item index="4" class="java.lang.String" itemvalue="border-radius-topleft" />
+            <item index="5" class="java.lang.String" itemvalue="flex-warp" />
           </list>
         </value>
       </option>
@@ -30,7 +32,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="7">
+          <list size="10">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -38,6 +40,9 @@
             <item index="4" class="java.lang.String" itemvalue="embed" />
             <item index="5" class="java.lang.String" itemvalue="script" />
             <item index="6" class="java.lang.String" itemvalue="button" />
+            <item index="7" class="java.lang.String" itemvalue="hover" />
+            <item index="8" class="java.lang.String" itemvalue="selec" />
+            <item index="9" class="java.lang.String" itemvalue="p" />
           </list>
         </value>
       </option>
