@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/a5e9eda380.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .container img{
+        width: 150px;
+        height: 120px;
+        border-radius: 15px;
+    }
+    .container{
+        width: 350px;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;
+        margin: auto;
+
+    }
+    .div1 button{
+      background-color: #227836;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    p{
+        line-height: 0.5;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    i{
+        color: red;
+    }
+    .div1 button:hover{
+        background-color: rgba(20, 67, 10, 0.9);
+    }
+
+</style>
+<body>
+<h1>Bạn thích món nào nhất</h1>
+
+<div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Bun-Bo-Hue-from-Huong-Giang-2011.jpg" alt="">
+    <div class="div1">
+        <h2>Bún bò huế</h2>
+        <p><i class="fa-solid fa-heart"></i><span id="heart1"> </span>lượt thích</p>
+        <button id="btn1">Thích +1</button>
+    </div>
+</div>
+<div class="container">
+    <img src="https://cdn.pastaxi-manager.onepas.vn/content/uploads/articles/lanmkt/phobohanoi/pho-bo-ha-noi-1.jpg" alt="">
+    <div class="div1">
+        <h2>Phở bò Hà Nội</h2>
+        <p><i class="fa-solid fa-heart"></i><span id="heart2"> </span>lượt thích</p>
+        <button id="btn2">Thích +1</button>
+    </div>
+</div>
+<div class="container">
+    <img src="https://static.vinwonders.com/production/com-tam-sai-gon-1.jpg" alt="">
+    <div class="div1">
+        <h2>Cơm Tấm Sài Gòn</h2>
+        <p><i class="fa-solid fa-heart"></i><span id="heart3"> </span>lượt thích</p>
+        <button id="btn3">Thích +1</button>
+    </div>
+</div>
+<script>
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+    let heart1 = document.getElementById("heart1");
+    let heart2 = document.getElementById("heart2");
+    let heart3 = document.getElementById("heart3");
+    heart1.innerText = " " + localStorage.getItem("heart1") + " ";
+    heart2.innerText =  " " + localStorage.getItem("heart2") + " ";
+    heart3.innerText =  " " + localStorage.getItem("heart3") + " ";
+
+    // localStorage.setItem("heart1", "0" );
+    // localStorage.setItem("heart2", "0")
+    // localStorage.setItem("heart3", "0")
+
+    btn1.onclick = function(){
+        let n = +localStorage.getItem("heart1")
+        n++;
+        heart1.innerText = " " +n + " ";
+        localStorage.setItem("heart1", n.toString());
+    }
+
+    btn2.onclick = function(){
+        let n = +localStorage.getItem("heart2")
+        n++;
+        heart2.innerText = " " +n + " ";
+        localStorage.setItem("heart2", n.toString());
+    }
+
+    btn3.onclick = function(){
+        let n = +localStorage.getItem("heart3")
+        n++;
+        heart3.innerText = " " +n + " ";
+        localStorage.setItem("heart3", n.toString());
+    }
+
+
+</script>
+
+</body>
+</html>

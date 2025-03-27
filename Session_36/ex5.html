@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <link rel="stylesheet" href="ex5.css">
+</head>
+<body>
+<h2>📌 Quản lý công việc (Task Board)</h2>
+
+<div class="task-input">
+  <input type="text" id="taskName" placeholder="Nhập tên công việc..." />
+  <button id="btnAdd">Thêm</button>
+</div>
+
+<div class="board">
+  <div class="column" id="pendingCol">
+    <h3>⏳ Chờ xử lý</h3>
+    <div id="pendingTasks"></div>
+  </div>
+  <div class="column" id="inProgressCol">
+    <h3>🚧 Đang làm</h3>
+    <div id="inProgressTasks"></div>
+  </div>
+  <div class="column" id="doneCol">
+    <h3>✅ Hoàn thành</h3>
+    <div id="doneTasks"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let btn = document.getElementById("btnAdd");
+
+    // Load tasks from local storage
+    loadTasks();
+
+    btn.addEventListener("click", function () {
+      let input = document.getElementById("taskName").value.trim();
+      if (input === "") {
+        alert("Vui lòng nhập tên công việc!");
+        return;
+      }
+      addTask(input, "pendingTasks");
+      document.getElementById("taskName").value = "";
+      saveTasks();
+    });
+
+    function addTask(taskText, columnId) {
+      let box = document.getElementById(columnId);
+      let taskDiv = document.createElement("div");
+      taskDiv.classList.add("task");
+      taskDiv.innerHTML = `
+        <p>${taskText}</p>
+        <button class="moveBtn">Chuyển Tiếp</button>
+      `;
+      box.appendChild(taskDiv);
+
+
+      taskDiv.querySelector(".moveBtn").addEventListener("click", function () {
+        moveTask(taskDiv, columnId);
+      });
+
+      saveTasks();
+    }
+
+    function moveTask(taskDiv, currentColumn) {
+  let nextColumn;
+  if (currentColumn === "pendingTasks") {
+    nextColumn = "inProgressTasks";
+  } else if (currentColumn === "inProgressTasks") {
+    nextColumn = "doneTasks";
+    taskDiv.querySelector(".moveBtn").remove();
+  }
+
+  if (nextColumn) {
+    document.getElementById(nextColumn).appendChild(taskDiv);
+    saveTasks();
+  }
+    }
+
+    function saveTasks() {
+      let tasks = {
+        pending: document.getElementById("pendingTasks").innerHTML,
+        inProgress: document.getElementById("inProgressTasks").innerHTML,
+        done: document.getElementById("doneTasks").innerHTML
+      };
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+      let tasks = JSON.parse(localStorage.getItem("tasks"));
+      if (tasks) {
+        document.getElementById("pendingTasks").innerHTML = tasks.pending;
+        document.getElementById("inProgressTasks").innerHTML = tasks.inProgress;
+        document.getElementById("doneTasks").innerHTML = tasks.done;
+
+        document.querySelectorAll(".moveBtn").forEach(button => {
+          button.addEventListener("click", function () {
+            let taskDiv = button.parentElement;
+            let parentId = taskDiv.parentElement.id;
+            moveTask(taskDiv, parentId);
+          });
+        });
+      }
+    }
+  });
+</script>
+</body>
+</html>

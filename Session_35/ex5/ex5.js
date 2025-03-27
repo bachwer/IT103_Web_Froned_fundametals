@@ -104,7 +104,8 @@ function renderTable() {
                 <button class="edit" data-index="${index}">✏️</button>
                 <button class="delete" data-index="${index}">🗑️</button>
             </td>
-        `;
+        `
+        row.classList.add("row");
         table.appendChild(row);
     });
 

@@ -4,6 +4,8 @@ let product = {
     status: [],
 }
 
+
+
 let addProduct = document.getElementById('addProduct');
 let cancel = document.getElementById('cancel');
 let cancel1 = document.getElementById('close');
@@ -59,11 +61,14 @@ add.addEventListener('click', function () {
         return;
     }
 
+
     let newProduct = {
         code: code,
         name: name,
         status: selectedStatus.value === "active" ? "active" : "inactive"
     };
+
+
 
     categories.push(newProduct);
     document.getElementById("input-inf").style.display = "none";
@@ -72,10 +77,8 @@ add.addEventListener('click', function () {
     selectedStatus.checked = false;
 
 
-    renderTable(search.toLowerCase());
-
-
 });
+
 
 
 
@@ -89,9 +92,28 @@ let categories = [
     { code: "DM007", name: "Rau", status: "active" },
     { code: "DM008", name: "Điện thoại", status: "inactive" }
 ];
-
+document.addEventListener("DOMContentLoaded", function() {
+    let boxProduct = document.querySelector("#box-product");
+    if (boxProduct) {
+        boxProduct.addEventListener("change", function() {
+            let selectedValue = this.value.trim();
+            console.log("Giá trị đã chọn:", selectedValue);
+            renderTable(selectedValue);
+        });
+    } else {
+        console.error("Không tìm thấy phần tử #box-product");
+    }
+});
+renderTable(null);
 function renderTable(search) {
-    let table = document.querySelector(".table");
+    let check = null;
+    if (search === "1") {
+        check = "active";
+    } else if (search === "2") {
+        check = "inactive";
+    }
+        let table = document.querySelector(".table");
+    let box = document.querySelector(".box-product");
     table.innerHTML = `
         <tr>
             <td style="width: 20%;" class="tdc">Mã danh mục <i class="fa-solid fa-arrow-down"></i></td>
@@ -101,10 +123,10 @@ function renderTable(search) {
         </tr>
     `;
 
-    categories.forEach((item, index) => {
-        if (!search || item.name.toLowerCase().includes(search.toLowerCase())) {
-            let row = document.createElement("tr");
-            row.innerHTML = `
+        categories.forEach((item, index) => {
+            if (check === null || item.status === check) {
+                let row = document.createElement("tr");
+                row.innerHTML = `
                 <td>${item.code}</td>
                 <td>${item.name}</td>
                 <td style="color: ${item.status === "active" ? "green" : "red"}">
@@ -115,9 +137,13 @@ function renderTable(search) {
                     <button class="delete" data-index="${index}">🗑️</button>
                 </td>
             `;
-            table.appendChild(row);
-        }
-    });
+                row.classList.add("row");
+
+                table.appendChild(row);
+            }
+        });
+
+
 
     document.querySelectorAll(".edit").forEach(btn =>
         btn.addEventListener("click", editCategory)
@@ -161,3 +187,4 @@ document.getElementById("box-message").addEventListener("keypress", function(eve
     }
 });
 document.addEventListener("DOMContentLoaded", renderTable);
+
