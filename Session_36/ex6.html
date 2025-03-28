@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hệ thống đánh giá sản phẩm</title>
+  <link rel="stylesheet" href="ex6.css">
+</head>
+<body>
+<div class="product">
+  <h2>Sản phẩm: Tai nghe Bluetooth</h2>
+  <img
+          src="https://imgs.search.brave.com/JRPdDRzOPxD2puv-eXZx8AiHMt7ySnUVRZs4uCbu7CI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI5/NDk2NjY4Ni9waG90/by9iZWlqaW5nLWNo/aW5hLWFpcnBvZHMt/bWF4LWlzLXNlZW4t/YXQtYW4tYXBwbGUt/c3RvcmUtb24tamFu/dWFyeS0yLTIwMjEt/aW4tYmVpamluZy1j/aGluYS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9aXlyd0Np/TkJ6UW9jZzdUTHEt/LTNpNGM5dXpiTkda/NHprOW4tdUwwRWtk/Zz0"
+          alt=""
+  />
+  <p>Đánh giá sản phẩm:</p>
+  <div id="rating">
+    <span class="stars" data-value="1">★</span>
+    <span class="stars" data-value="2">★</span>
+    <span class="stars" data-value="3">★</span>
+    <span class="stars" data-value="4">★</span>
+    <span class="stars" data-value="5">★</span>
+  </div>
+  <p id="selected-rating">Bạn chưa đánh giá.</p>
+
+  <!-- Bình luận -->
+  <div class="comment-section">
+    <h3>Bình luận</h3>
+    <textarea id="comment-input" class="comment-box" placeholder="Nhập bình luận..."></textarea>
+    <button onclick="submitReview()">Gửi</button>
+    <ul id="comment-list" class="comment-list">
+      <!-- sử dụng thẻ li và bên trong là thẻ span chứa sao và thẻ b chưa nội dung đánh giá -->
+      <!-- <li> <span>★★★★★<span> <b>Hay qué</b> </li> -->
+    </ul>
+  </div>
+</div>
+<script>
+  let check = false;
+  let numStart;
+ load();
+
+  document.querySelectorAll(".stars").forEach((star, index, stars) => {
+
+    star.addEventListener("click", function () {
+      for (let i = 0; i < stars.length; i++) {
+        stars[i].style.color = "#ddd";
+      }
+      let value = parseInt(this.getAttribute("data-value"));
+      numStart = value;
+
+      for (let i = 0; i < value; i++) {
+        stars[i].style.color = "gold";
+      }
+
+      document.getElementById("selected-rating").innerText = `Bạn đã đánh giá: ${value} sao`;
+      check = true;
+    });
+  });
+
+  function num(){
+    let document="";
+    for(let i = 0; i < numStart; i++) {
+      document += "★"
+    }
+    return document.toString();
+  }
+
+
+
+  function submitReview() {
+    let text = document.getElementById("comment-input").value;
+    if (check === false) {
+      alert("Invalid");
+      return;
+    } else if (text === "") {
+      alert("Invalid");
+      return;
+    }
+
+    let start = num();
+
+    let box = document.getElementById("comment-list");
+    let li = document.createElement("li");
+    li.classList.add("lily");
+    li.classList.add("lily");
+    li.innerHTML = `<span class="stars1">${start}<span> <b>${text}</b>`;
+
+
+    box.appendChild(li);
+
+   save();
+  }
+  function save() {
+    let comments = [];
+    document.querySelectorAll("#comment-list li").forEach(li => {
+      comments.push(li.innerHTML);
+    });
+
+    localStorage.setItem("comments", JSON.stringify(comments));
+
+  }
+  function load(){
+    let boxAll = document.getElementById("comment-list");
+    let box = localStorage.getItem("comments");
+    let box1 = JSON.parse(box)
+
+   if(box1){
+     box1.forEach(commentHTML => {
+       let li = document.createElement("li");
+       li.classList.add("lily");
+       li.innerHTML = commentHTML;
+       boxAll.appendChild(li);
+     });
+   }
+
+
+  }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

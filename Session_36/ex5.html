@@ -9,14 +9,18 @@
 <h2>📌 Quản lý công việc (Task Board)</h2>
 
 <div class="task-input">
-  <input type="text" id="taskName" placeholder="Nhập tên công việc..." />
+  <label for="taskName"></label><input type="text" id="taskName" placeholder="Nhập tên công việc..." />
   <button id="btnAdd">Thêm</button>
 </div>
 
 <div class="board">
   <div class="column" id="pendingCol">
     <h3>⏳ Chờ xử lý</h3>
-    <div id="pendingTasks"></div>
+    <div id="pendingTasks">
+
+
+
+    </div>
   </div>
   <div class="column" id="inProgressCol">
     <h3>🚧 Đang làm</h3>
@@ -29,82 +33,116 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let btn = document.getElementById("btnAdd");
 
-    // Load tasks from local storage
-    loadTasks();
+   let btn = document.getElementById("btnAdd");
+   loadTask();
 
-    btn.addEventListener("click", function () {
-      let input = document.getElementById("taskName").value.trim();
-      if (input === "") {
-        alert("Vui lòng nhập tên công việc!");
-        return;
+
+   btn.addEventListener("click", function() {
+     let taskID = document.getElementById("pendingTasks");
+
+     add(taskID, "pendingTasks");
+   });
+
+   function add(taskID, columnID) {
+     let divTask = document.createElement("div");
+     let taskName = document.getElementById("taskName").value;
+     if (taskName === "") {
+       alert("Invalid");
+       return;
+     }
+     divTask.innerHTML = `
+     <p>${taskName}</p>
+          <button class="nextBtn">Chuyển Tiếp</button>
+
+     `
+     divTask.classList.add("task");
+     taskID.appendChild(divTask);
+     document.getElementById("taskName").value = "";
+
+
+
+     if (columnID === "doneTasks") {
+
+       divTask.querySelector(".nextBtn").remove();
+     } else {
+       divTask.querySelector(".nextBtn").addEventListener("click", function () {
+         nextTask(divTask);
+       });
+     }
+     saveTask(taskName,columnID )
+   }
+
+
+     function nextTask(divTask) {
+       let parentID = divTask.parentElement.id;
+       let currentID
+       if (parentID === "pendingTasks") {
+         currentID = "inProgressCol"
+       } else if (parentID === "inProgressCol") {
+         currentID = "doneTasks"
+       }else{
+         return;
+       }
+
+       if(currentID){
+         if(currentID === "doneTasks"){
+           let nextBtn = divTask.querySelector(".nextBtn");
+           nextBtn.remove();
+
+         }
+         document.getElementById(currentID).appendChild(divTask);
+       }
+
+       let taskName = divTask.querySelector("p").innerText;
+       saveTask(taskName, currentID);
+     }
+
+     function saveTask(nameTask, taskID) {
+      let task = {
+        name: [],
+        taskID: [],
+
       }
-      addTask(input, "pendingTasks");
-      document.getElementById("taskName").value = "";
-      saveTasks();
-    });
+      task.name.push(nameTask);
+      task.taskID.push(taskID);
+      localStorage.setItem("task", JSON.stringify(task));
 
-    function addTask(taskText, columnId) {
-      let box = document.getElementById(columnId);
-      let taskDiv = document.createElement("div");
-      taskDiv.classList.add("task");
-      taskDiv.innerHTML = `
-        <p>${taskText}</p>
-        <button class="moveBtn">Chuyển Tiếp</button>
-      `;
-      box.appendChild(taskDiv);
+      console.log(task);
 
+     }
 
-      taskDiv.querySelector(".moveBtn").addEventListener("click", function () {
-        moveTask(taskDiv, columnId);
-      });
+     function loadTask(){
+       let task = localStorage.getItem("task");
+       let allTask = JSON.parse(task);
 
-      saveTasks();
-    }
+       if (!allTask || !allTask.name || !allTask.taskID) {
+         return;
+       }
 
-    function moveTask(taskDiv, currentColumn) {
-  let nextColumn;
-  if (currentColumn === "pendingTasks") {
-    nextColumn = "inProgressTasks";
-  } else if (currentColumn === "inProgressTasks") {
-    nextColumn = "doneTasks";
-    taskDiv.querySelector(".moveBtn").remove();
-  }
+       allTask.name.forEach((taskName, index) => {
+         let columnID = allTask.taskID[index];
+         let taskContainer = document.getElementById(columnID);
 
-  if (nextColumn) {
-    document.getElementById(nextColumn).appendChild(taskDiv);
-    saveTasks();
-  }
-    }
+         if (taskContainer) {
+           let divTask = document.createElement("div");
+           divTask.innerHTML = `
+             <p>${taskName}</p>
+             ${columnID !== "doneTasks" ? '<button class="nextBtn">Chuyển Tiếp</button>' : ''}
+           `;
+           divTask.classList.add("task");
 
-    function saveTasks() {
-      let tasks = {
-        pending: document.getElementById("pendingTasks").innerHTML,
-        inProgress: document.getElementById("inProgressTasks").innerHTML,
-        done: document.getElementById("doneTasks").innerHTML
-      };
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
+           if (columnID !== "doneTasks") {
+             divTask.querySelector(".nextBtn").addEventListener("click", function () {
+               nextTask(divTask);
+             });
+           }
 
-    function loadTasks() {
-      let tasks = JSON.parse(localStorage.getItem("tasks"));
-      if (tasks) {
-        document.getElementById("pendingTasks").innerHTML = tasks.pending;
-        document.getElementById("inProgressTasks").innerHTML = tasks.inProgress;
-        document.getElementById("doneTasks").innerHTML = tasks.done;
+           taskContainer.appendChild(divTask);
+         }
+       });
+   }
 
-        document.querySelectorAll(".moveBtn").forEach(button => {
-          button.addEventListener("click", function () {
-            let taskDiv = button.parentElement;
-            let parentId = taskDiv.parentElement.id;
-            moveTask(taskDiv, parentId);
-          });
-        });
-      }
-    }
-  });
 </script>
 </body>
 </html>
